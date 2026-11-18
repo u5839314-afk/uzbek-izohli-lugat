@@ -1,10 +1,10 @@
-{
-  "kitob": "O‘qish uchun mo‘ljallangan asar.",
-  "ilm": "O‘rganish orqali egallanadigan bilim.",
-  "vatan": "Inson tug‘ilib o‘sgan yurt.",
-  "do‘st": "Yaqin va ishonchli inson.",
-  "mehr": "Samimiy iliqlik va muhabbat.",
-  "maktab": "Ta’lim beriladigan muassasa.",
-  "tabiat": "Bizni o‘rab turgan borliq.",
-  "bilim": "O‘qish va izlanish natijasida olingan ma’lumot."
-}
+# JSON lug‘at bazasini yuklash
+def load_words():
+    try:
+        with open("words.json", "r", encoding="utf-8") as file:
+            return json.load(file)
+    except Exception as e:
+        print("Lug‘at yuklanmadi:", e)
+        return {}
+
+WORDS = load_words()
